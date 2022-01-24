@@ -1,5 +1,4 @@
-var net = request('net');
-
+var net = require('net');
 
 const readline = require('readline').createInterface({
     input: process.stdin,
@@ -9,9 +8,9 @@ const readline = require('readline').createInterface({
 var HOST = '127.0.0.1';
 var PORT = 6969;
 
-var client = new net.socket();
+var client = new net.Socket();
 client.connect(PORT, HOST, function() {
-    console.log('CONNECTEF TO: ' + HOST + ':' +PORT);
+    console.log('CONNECTEF TO: ' + HOST + ':' + PORT);
     readline.question('\n', input => {
         client.write(input);
     })   
